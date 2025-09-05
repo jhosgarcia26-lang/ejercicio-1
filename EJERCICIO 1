@@ -1,0 +1,28 @@
+function testScope() {
+    var x = 10;
+
+    if (true) {
+        var x = 20; // Esta redeclaración con var SÍ afecta la variable fuera del bloque
+        console.log("Dentro del bloque con var:", x); // Imprime: 20
+    }
+
+    console.log("Fuera del bloque con var:", x); // Imprime: 20
+}
+
+function testLetScope() {
+    let y = 10;
+
+    if (true) {
+        let y = 20; // Esta redeclaración con let NO afecta la variable fuera del bloque
+        console.log("Dentro del bloque con let:", y); // Imprime: 20
+    }
+
+    console.log("Fuera del bloque con let:", y); // Imprime: 10
+}
+
+testScope();
+testLetScope();
+Dentro del bloque con var: 20
+Fuera del bloque con var: 20
+Dentro del bloque con let: 20
+Fuera del bloque con let: 10
